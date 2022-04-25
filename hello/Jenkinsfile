@@ -14,7 +14,9 @@ pipeline {
         }
         stage('Test') {
                             steps {
+                            dir('hello') {
                                 sh 'mvn test'
+                                }
                             }
                             post{
                                 always{
@@ -24,11 +26,13 @@ pipeline {
         }
         stage('Publish'){
                             steps {
+                            dir('hello') {
                                 sh 'mvn package'
+                                }
                             }
                              post{
                                   success{
-                                      archiveArtifacts 'target/*.jar'
+                                      archiveArtifacts 'hello/target/*.jar'
                                    }
                              }
         }
