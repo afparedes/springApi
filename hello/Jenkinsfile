@@ -7,8 +7,9 @@ pipeline {
                 git 'https://github.com/afparedes/springApi.git'
                 dir('hello') {
                       sh "pwd"
+                      sh 'mvn clean compile'
                     }
-                sh 'mvn clean compile'
+
             }
         }
         stage('Test') {
