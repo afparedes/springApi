@@ -7,7 +7,7 @@ pipeline {
                 git 'https://github.com/afparedes/springApi.git'
                 dir('hello') {
                       sh "pwd"
-                      sh 'mvn clean compile'
+                      sh './mvnw clean compile'
                     }
 
             }
@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
                             steps {
                             dir('hello') {
-                                sh 'mvn test'
+                                sh './mvnw test'
                                 }
                             }
                             post{
@@ -27,7 +27,7 @@ pipeline {
         stage('Publish'){
                             steps {
                             dir('hello') {
-                                sh 'mvn package'
+                                sh './mvnw package'
                                 }
                             }
                              post{
