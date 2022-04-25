@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/afparedes/springApi.git'
+                cd 'hello/'
                 sh 'mvn clean compile'
             }
         }
