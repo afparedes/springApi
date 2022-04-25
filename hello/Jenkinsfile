@@ -7,6 +7,7 @@ pipeline {
                 git 'https://github.com/afparedes/springApi.git'
                 dir('hello') {
                       sh "pwd"
+                      sh "chmod +x mvnw"
                       sh './mvnw clean compile'
                     }
 
