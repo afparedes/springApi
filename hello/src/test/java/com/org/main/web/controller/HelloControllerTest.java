@@ -68,7 +68,7 @@ public class HelloControllerTest {
 	@Test
 	public void testMockito() throws Exception {
 		Mockito.when(saludoService.testMockito()).thenReturn("hola23");
-        assertEquals(controller.testMockito(), "hola23");
+        assertEquals(controller.testMockito(), "hola3");
 		Mockito.verify(saludoService).testMockito();
 	}
 	@Test
